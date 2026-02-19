@@ -236,3 +236,6 @@ footer{
   transform: translateY(-2px);
   border-color: rgba(56,189,248,.35);
 }
+.project-link { text-decoration: none; display: block; color: inherit; }
+.project-link:hover { text-decoration: none; }
+.project-link .card { height: 100%; }
