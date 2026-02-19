@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Projekt: Dron na Raspberry Pi — MXVM1</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* małe dodatki tylko dla tej podstrony */
+    .project-hero { padding: 30px 0 10px; }
+    .breadcrumbs { color: var(--muted); font-size: 14px; margin: 0 0 10px; }
+    .project-title { margin: 8px 0 10px; font-size: clamp(26px, 3.4vw, 40px); line-height: 1.1; }
+    .project-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    .project-grid .item { padding: 18px; }
+    @media (max-width: 860px){ .project-grid { grid-template-columns: 1fr; } }
+    .mono { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; }
+    .list { margin: 8px 0 0; padding-left: 18px; color: var(--text); opacity: .92; }
+    .list li { margin: 6px 0; }
+  </style>
+</head>
+<body>
+
+  <div class="nav">
+    <div class="container">
+      <div class="nav-inner">
+        <div class="brand">
+          <span class="dot"></span>
+          <span>MXVM1 • Portfolio</span>
+        </div>
+        <div class="nav-links">
+          <a href="index.html#start">Start</a>
+          <a href="index.html#projekty">Projekty</a>
+          <a href="index.html#blog">Blog</a>
+          <a href="index.html#o-mnie">O mnie</a>
+          <a href="index.html#kontakt">Kontakt</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <main class="project-hero">
+    <div class="container">
+      <p class="breadcrumbs">← <a href="index.html#projekty">Wróć do projektów</a></p>
+      <div class="card item">
+        <h1 class="project-title">System sterowania dronem oparty o Raspberry Pi</h1>
+        <p class="desc">
+          Projekt polegał na zaprojektowaniu i implementacji systemu sterowania dronem, w którym Raspberry Pi pełniło rolę jednostki centralnej.
+          Oprogramowanie w Pythonie odbierało sygnały z aparatury (ELRS/CRSF), sterowało silnikami oraz odczytywało dane z czujników przez I²C.
+        </p>
+
+        <div class="tags">
+          <span class="tag">Raspberry Pi</span>
+          <span class="tag">Python</span>
+          <span class="tag">ELRS / CRSF</span>
+          <span class="tag">UART</span>
+          <span class="tag">I²C</span>
+          <span class="tag">BMP280</span>
+          <span class="tag">MPU9250</span>
+        </div>
+
+        <div class="btns" style="margin-top:14px">
+          <a class="btn primary" href="index.html#kontakt">Kontakt</a>
+          <a class="btn" href="https://github.com/MXVM1" target="_blank" rel="noopener">GitHub</a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <section>
+    <div class="container">
+      <div class="project-grid">
+        <div class="card item">
+          <h3>Najważniejsze funkcje</h3>
+          <ul class="list">
+            <li>Odbiór kanałów RC z odbiornika ELRS (protokół <span class="mono">CRSF</span>) przez UART</li>
+            <li>Dekodowanie ramek RC (16 kanałów, 11-bit) i mapowanie na sterowanie</li>
+            <li>Sterowanie silnikami (ESC) z poziomu Raspberry Pi</li>
+            <li>Odczyt czujników przez I²C (ciśnienie/wysokość, IMU)</li>
+            <li>Struktura kodu pod dalszą rozbudowę (telemetria, stabilizacja)</li>
+          </ul>
+        </div>
+
+        <div class="card item">
+          <h3>Architektura (skrót)</h3>
+          <p class="desc">
+            <b>UART</b> → odbiornik ELRS → dekoder CRSF → wartości kanałów RC → logika sterowania → wyjście na ESC<br/>
+            <b>I²C</b> → BMP280 / MPU9250 → filtracja / prezentacja danych → (opcjonalnie telemetria)
+          </p>
+          <p class="meta">W tej sekcji możesz później dodać schemat blokowy lub zdjęcie.</p>
+        </div>
+
+        <div class="card item">
+          <h3>Wyzwania i rozwiązania</h3>
+          <ul class="list">
+            <li>Stabilność odczytu ramek UART → buforowanie + walidacja CRC</li>
+            <li>Kalibracja ESC → procedura min/max throttle + testy na pojedynczym silniku</li>
+            <li>Niepoprawne odczyty sensorów → weryfikacja kalibracji/kompensacji i adresów I²C</li>
+          </ul>
+        </div>
+
+        <div class="card item">
+          <h3>Repozytorium</h3>
+          <p class="desc">
+            Link do repo możesz wkleić tutaj:
+            <br/><a href="#" class="mono">https://github.com/MXVM1/...</a>
+          </p>
+          <p class="meta">Tip: dodaj README z opisem uruchomienia i screenami/logami.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      © <span id="y"></span> MXVM1 • Projekt: Dron na Raspberry Pi
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("y").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
