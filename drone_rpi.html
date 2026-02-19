@@ -44,8 +44,8 @@
       <div class="card item">
         <h1 class="project-title">System sterowania dronem oparty o Raspberry Pi</h1>
         <p class="desc">
-          Projekt polegał na zaprojektowaniu i implementacji systemu sterowania dronem, w którym Raspberry Pi pełniło rolę jednostki centralnej.
-          Oprogramowanie w Pythonie odbierało sygnały z aparatury (ELRS/CRSF), sterowało silnikami oraz odczytywało dane z czujników przez I²C.
+          Projekt polegał na zaprojektowaniu i implementacji systemu sterowania dronem, w którym Raspberry Pi pełniło rolę Flight Controllera.
+          Oprogramowanie w Pythonie odbierało sygnały z aparatury za pomocą protokołu (ELRS/CRSF), sterowało silnikami przez podanie sygnałów PWM na konkretne ESC silników BLDC oraz odczytywało dane z czujników przez I²C.
         </p>
 
         <div class="tags">
@@ -74,7 +74,7 @@
           <ul class="list">
             <li>Odbiór kanałów RC z odbiornika ELRS (protokół <span class="mono">CRSF</span>) przez UART</li>
             <li>Dekodowanie ramek RC (16 kanałów, 11-bit) i mapowanie na sterowanie</li>
-            <li>Sterowanie silnikami (ESC) z poziomu Raspberry Pi</li>
+            <li>Sterowanie silnikami przez (ESC) z poziomu Raspberry Pi</li>
             <li>Odczyt czujników przez I²C (ciśnienie/wysokość, IMU)</li>
             <li>Struktura kodu pod dalszą rozbudowę (telemetria, stabilizacja)</li>
           </ul>
