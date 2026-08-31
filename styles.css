@@ -222,6 +222,12 @@ footer{
   border-top: 1px solid var(--border);
   margin-top: 24px;
 }
+.project-more{
+  margin: 14px 0 0;
+  color: var(--accent);
+  font-size: 13px;
+  font-weight: 600;
+}
 
 /* Responsive */
 @media (max-width: 860px){
