@@ -3,8 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="description" content="Portfolio techniczne MXVM1 — automatyka, embedded, sieci, Linux i projekty programistyczne.">
   <title>Portfolio — MXVM1</title>
-<link rel="stylesheet" href="styles.css">
+
+  <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
@@ -13,219 +15,335 @@
   <div class="nav">
     <div class="container">
       <div class="nav-inner">
+
         <div class="brand">
           <span class="dot"></span>
           <span>MXVM1 • Portfolio</span>
         </div>
+
         <div class="nav-links">
           <a href="#start">Start</a>
           <a href="#projekty">Projekty</a>
-          <a href="#blog">Blog</a>
           <a href="#o-mnie">O mnie</a>
           <a href="#kontakt">Kontakt</a>
         </div>
+
       </div>
     </div>
   </div>
+
 
   <!-- HERO -->
   <header id="start">
     <div class="container">
+
       <div class="hero">
+
+        <!-- LEWA STRONA -->
         <div class="card hero-left">
-          <div class="kicker">🔐 Cyberbezpieczeństwo • Sieci • Embedded</div>
-          <h1>Portfolio IT (w budowie)</h1>
+
+          <div class="kicker">
+            ⚙️ Automatyka • Embedded • IT
+          </div>
+
+          <h1>Portfolio techniczne</h1>
+
           <p class="subtitle">
-            Buduję narzędzia do analizy sieci i bezpieczeństwa. Dokumentuję postępy w formie krótkich wpisów na blogu.
+            Projekty z zakresu automatyki, systemów embedded,
+            komunikacji przemysłowej oraz programowania.
           </p>
 
           <div class="btns">
-            <a class="btn primary" href="#projekty">Zobacz projekty</a>
-            <a class="btn" href="https://github.com/MXVM1" target="_blank" rel="noopener">GitHub</a>
+            <a class="btn primary" href="#projekty">
+              Zobacz projekty
+            </a>
+
+            <a
+              class="btn"
+              href="https://github.com/MXVM1"
+              target="_blank"
+              rel="noopener"
+            >
+              GitHub
+            </a>
           </div>
 
           <div style="margin-top:14px">
-            <span class="pill">Python (skrypty)</span>
+
+            <span class="pill">Python</span>
             <span class="pill">Linux</span>
-            <span class="pill">Wireshark / Nmap</span>
-            <span class="pill">OT/ICS (Modbus)</span>
+            <span class="pill">TCP/IP</span>
+            <span class="pill">Modbus</span>
+            <span class="pill">Embedded</span>
+
           </div>
+
         </div>
 
+
+        <!-- PRAWA STRONA -->
         <div class="card hero-right">
-          <h3>Aktualnie robię</h3>
-          <p class="small">• Strona portfolio + blog</p>
-          <p class="small">• Projekt: analizator sieci LAN (MVP)</p>
-          <p class="small">• Nauka: podstawy Pythona pod cybersec</p>
 
-          <div style="height:12px"></div>
+          <h3>Obszary zainteresowań</h3>
 
-          <h3>Cel</h3>
+          <p class="small">• Automatyka i systemy przemysłowe</p>
+          <p class="small">• Systemy embedded i elektronika</p>
+          <p class="small">• Sieci komputerowe i TCP/IP</p>
+          <p class="small">• Linux i administracja systemami</p>
+
+          <div style="height:16px"></div>
+
+          <h3>Portfolio</h3>
+
           <p class="small muted">
-            W trakcie...
+            Dokumentuję tutaj wybrane projekty techniczne,
+            ich architekturę, problemy napotkane podczas realizacji
+            oraz zastosowane rozwiązania.
           </p>
+
         </div>
+
       </div>
+
     </div>
   </header>
 
-<!-- PROJECTS -->
-<section id="projekty">
-  <div class="container">
-    <div class="section-title">
-      <h2>Projekty</h2>
-      <span class="muted">Repozytoria + opis działania</span>
-    </div>
 
-    <div class="grid">
 
-      <a class="project-link" href="drone_rpi.html">
-        <div class="card item">
-          <h3>System sterowania dronem (Raspberry Pi)</h3>
-          <p class="meta">Status: opis projektu • Python</p>
-          <p class="desc">
-            Odbiór sygnałów RC (ELRS/CRSF) przez UART, dekodowanie kanałów,
-            sterowanie silnikami oraz odczyt czujników (BMP280/MPU9250) przez I²C.
-          </p>
-          <div class="tags">
-            <span class="tag">Raspberry Pi</span>
-            <span class="tag">Python</span>
-            <span class="tag">CRSF</span>
-            <span class="tag">UART</span>
-            <span class="tag">I²C</span>
-          </div>
-        </div>
-      </a>
+  <!-- PROJECTS -->
+  <section id="projekty">
 
-      <div class="card item">
-        <h3>Analizator sieci LAN (MVP)</h3>
-        <p class="meta">Status: w budowie • Python</p>
-        <p class="desc">
-          Narzędzie do wykrywania hostów w sieci, podstawowego skanowania portów oraz generowania raportu.
-        </p>
-        <div class="tags">
-          <span class="tag">Python</span>
-          <span class="tag">Nmap</span>
-          <span class="tag">TCP/IP</span>
-          <span class="tag">Raport HTML</span>
-        </div>
-      </div>
-
-      <div class="card item">
-        <h3>File Inspector (plan)</h3>
-        <p class="meta">Status: planowane • Analiza plików</p>
-        <p class="desc">
-          Narzędzie do obliczania hashy, odczytu metadanych, strings i podstawowej analizy „podejrzanych” plików.
-        </p>
-        <div class="tags">
-          <span class="tag">Hash</span>
-          <span class="tag">Metadata</span>
-          <span class="tag">Strings</span>
-          <span class="tag">Forensics</span>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-  <!-- BLOG -->
-  <section id="blog">
     <div class="container">
+
       <div class="section-title">
-        <h2>Blog</h2>
-        <span class="muted">Krótkie wpisy techniczne</span>
+        <h2>Projekty</h2>
+        <span class="muted">Wybrane projekty techniczne</span>
       </div>
+
 
       <div class="grid">
-        <div class="card item">
-          <h3>Wpis #1: Jak działa skanowanie sieci (ARP / ping / porty)</h3>
-          <p class="meta">Data: wkrótce</p>
-          <p class="desc">
-            Plan: opisać jak wykrywam hosty, czym różni się ARP od pinga i jak interpretować wyniki skanowania.
-          </p>
-          <div class="tags">
-            <span class="tag">ARP</span>
-            <span class="tag">ICMP</span>
-            <span class="tag">TCP</span>
-          </div>
-        </div>
 
-        <div class="card item">
-          <h3>Wpis #2: Podstawy Modbus i co tu może pójść źle</h3>
-          <p class="meta">Data: wkrótce</p>
-          <p class="desc">
-            Plan: krótkie intro OT/ICS, typowe błędy konfiguracji, brak auth, brak segmentacji i ryzyka.
-          </p>
-          <div class="tags">
-            <span class="tag">OT/ICS</span>
-            <span class="tag">Modbus</span>
-            <span class="tag">Sieci</span>
+
+        <!-- DRON -->
+        <a class="project-link" href="drone_rpi.html">
+
+          <div class="card item">
+
+            <h3>System sterowania dronem — Raspberry Pi</h3>
+
+            <p class="meta">
+              Embedded • Python • Elektronika
+            </p>
+
+            <p class="desc">
+              Projekt systemu sterowania quadcopterem, w którym
+              Raspberry Pi pełni rolę kontrolera lotu.
+              System odbiera sygnały z aparatury RC,
+              odczytuje dane z czujników oraz steruje
+              silnikami poprzez regulatory ESC.
+            </p>
+
+            <div class="tags">
+
+              <span class="tag">Raspberry Pi</span>
+              <span class="tag">Python</span>
+              <span class="tag">ELRS / CRSF</span>
+              <span class="tag">UART</span>
+              <span class="tag">I²C</span>
+              <span class="tag">PWM</span>
+
+            </div>
+
+            <p class="project-more">
+              Zobacz projekt →
+            </p>
+
           </div>
-        </div>
+
+        </a>
+
+
+
+        <!-- MODBUS -->
+        <a class="project-link" href="modbus_reader.html">
+
+          <div class="card item">
+
+            <h3>Modbus Reader</h3>
+
+            <p class="meta">
+              Automatyka • Modbus • TCP/IP
+            </p>
+
+            <p class="desc">
+              Projekt narzędzia do komunikacji z urządzeniami
+              automatyki wykorzystującymi protokół Modbus.
+              Aplikacja umożliwia odczyt danych z rejestrów
+              urządzeń oraz ich prezentację i analizę.
+            </p>
+
+            <div class="tags">
+
+              <span class="tag">Modbus</span>
+              <span class="tag">TCP/IP</span>
+              <span class="tag">RS485</span>
+              <span class="tag">Python</span>
+              <span class="tag">Automatyka</span>
+
+            </div>
+
+            <p class="project-more">
+              Zobacz projekt →
+            </p>
+
+          </div>
+
+        </a>
+
+
       </div>
+
     </div>
+
   </section>
+
+
 
   <!-- ABOUT -->
   <section id="o-mnie">
+
     <div class="container">
+
       <div class="section-title">
+
         <h2>O mnie</h2>
-        <span class="muted">Krótko i konkretnie</span>
+
+        <span class="muted">
+          Krótko i konkretnie
+        </span>
+
       </div>
 
+
       <div class="card item">
+
         <p class="desc">
-          Interesuję się cyberbezpieczeństwem, sieciami i embedded. Buduję projekty praktyczne (narzędzia, analiza ruchu, automatyzacje, projekty w oparciu o mikrokontrolery takie jak Raspberry Pi, ESP32)
-          oraz dokumentuję je na GitHubie i w formie wpisów
+
+          Jestem absolwentem informatyki zainteresowanym
+          automatyką, systemami embedded, sieciami komputerowymi
+          oraz administracją systemami.
+
+          Łączę doświadczenie techniczne związane z automatyką
+          i instalacjami elektrycznymi z wiedzą informatyczną.
+
+          Rozwijam swoje umiejętności poprzez praktyczne projekty
+          wykorzystujące m.in. Raspberry Pi, Python,
+          komunikację sieciową oraz protokoły przemysłowe.
+
         </p>
+
+
         <div class="tags">
+
           <span class="tag">Linux</span>
           <span class="tag">TCP/IP</span>
-          <span class="tag">Python (podstawy)</span>
+          <span class="tag">Python</span>
           <span class="tag">Embedded</span>
-          <span class="tag">OT/ICS</span>
+          <span class="tag">Modbus</span>
+          <span class="tag">Automatyka</span>
+
         </div>
+
       </div>
+
     </div>
+
   </section>
+
+
 
   <!-- CONTACT -->
   <section id="kontakt">
+
     <div class="container">
+
       <div class="section-title">
+
         <h2>Kontakt</h2>
-        <span class="muted">Linki</span>
+
+        <span class="muted">
+          Linki
+        </span>
+
       </div>
+
 
       <div class="grid">
+
+
+        <!-- GITHUB -->
         <div class="card item">
+
           <h3>GitHub</h3>
+
           <p class="desc">
-            <a href="https://github.com/MXVM1" target="_blank" rel="noopener">github.com/MXVM1</a>
+
+            <a
+              href="https://github.com/MXVM1"
+              target="_blank"
+              rel="noopener"
+            >
+              github.com/MXVM1
+            </a>
+
           </p>
-          <p class="meta">Dodaj tu też link do LinkedIn, jak będziesz chciał.</p>
+
+          <p class="meta">
+            Repozytoria projektów i kod źródłowy.
+          </p>
+
         </div>
 
+
+
+        <!-- EMAIL / LINKEDIN -->
         <div class="card item">
-          <h3>E-mail</h3>
+
+          <h3>Kontakt</h3>
+
           <p class="desc muted">
-            (wpisz swój mail, jeśli chcesz go upublicznić)
+            Dane kontaktowe / LinkedIn
           </p>
-          <p class="meta">Tip: możesz dodać formularz dopiero później.</p>
+
+          <p class="meta">
+            Sekcja do uzupełnienia.
+          </p>
+
         </div>
+
+
       </div>
+
     </div>
+
   </section>
 
+
+
+  <!-- FOOTER -->
   <footer>
+
     <div class="container">
-      © <span id="y"></span> MXVM1 • Portfolio • GitHub Pages
+
+      © <span id="y"></span>
+      MXVM1 • Portfolio • GitHub Pages
+
     </div>
+
   </footer>
 
-<script src="script.js"></script>
+
+  <script src="script.js"></script>
 
 </body>
 </html>
