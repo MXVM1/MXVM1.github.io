@@ -4,29 +4,101 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <title>Projekt: Dron na Raspberry Pi — MXVM1</title>
+
   <link rel="stylesheet" href="styles.css">
+
   <style>
-    /* małe dodatki tylko dla tej podstrony */
-    .project-hero { padding: 30px 0 10px; }
-    .breadcrumbs { color: var(--muted); font-size: 14px; margin: 0 0 10px; }
-    .project-title { margin: 8px 0 10px; font-size: clamp(26px, 3.4vw, 40px); line-height: 1.1; }
-    .project-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
-    .project-grid .item { padding: 18px; }
-    @media (max-width: 860px){ .project-grid { grid-template-columns: 1fr; } }
-    .mono { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; }
-    .list { margin: 8px 0 0; padding-left: 18px; color: var(--text); opacity: .92; }
-    .list li { margin: 6px 0; }
+    .project-hero {
+      padding: 30px 0 10px;
+    }
+
+    .breadcrumbs {
+      color: var(--muted);
+      font-size: 14px;
+      margin: 0 0 10px;
+    }
+
+    .project-title {
+      margin: 8px 0 10px;
+      font-size: clamp(26px, 3.4vw, 40px);
+      line-height: 1.1;
+    }
+
+    .project-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+
+    .project-grid .item {
+      padding: 18px;
+    }
+
+    .mono {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+        "Liberation Mono", "Courier New", monospace;
+    }
+
+    .list {
+      margin: 8px 0 0;
+      padding-left: 18px;
+      color: var(--text);
+      opacity: .92;
+    }
+
+    .list li {
+      margin: 6px 0;
+    }
+
+    .project-image {
+      width: 100%;
+      display: block;
+      border-radius: 14px;
+      margin-top: 16px;
+    }
+
+    .image-card {
+      overflow: hidden;
+    }
+
+    .image-card img {
+      width: 100%;
+      display: block;
+      border-radius: 12px;
+      margin-top: 12px;
+    }
+
+    .wide-card {
+      grid-column: 1 / -1;
+    }
+
+    .architecture-text {
+      line-height: 1.8;
+    }
+
+    @media (max-width: 860px) {
+      .project-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .wide-card {
+        grid-column: auto;
+      }
+    }
   </style>
 </head>
+
 <body>
 
   <div class="nav">
     <div class="container">
       <div class="nav-inner">
+
         <div class="brand">
           <span class="dot"></span>
           <span>MXVM1 • Portfolio</span>
         </div>
+
         <div class="nav-links">
           <a href="index.html#start">Start</a>
           <a href="index.html#projekty">Projekty</a>
@@ -34,81 +106,366 @@
           <a href="index.html#o-mnie">O mnie</a>
           <a href="index.html#kontakt">Kontakt</a>
         </div>
+
       </div>
     </div>
   </div>
 
+
   <main class="project-hero">
     <div class="container">
-      <p class="breadcrumbs">← <a href="index.html#projekty">Wróć do projektów</a></p>
+
+      <p class="breadcrumbs">
+        ← <a href="index.html#projekty">Wróć do projektów</a>
+      </p>
+
       <div class="card item">
-        <h1 class="project-title">System sterowania dronem oparty o Raspberry Pi</h1>
+
+        <h1 class="project-title">
+          System sterowania dronem oparty o Raspberry Pi
+        </h1>
+
         <p class="desc">
-          Projekt polegał na zaprojektowaniu i implementacji systemu sterowania dronem, w którym Raspberry Pi pełniło rolę Flight Controllera.
-          Oprogramowanie w Pythonie odbierało sygnały z aparatury za pomocą protokołu (ELRS/CRSF), sterowało silnikami przez podanie sygnałów PWM na konkretne ESC silników BLDC oraz odczytywało dane z czujników przez I²C.
+          Eksperymentalny system sterowania quadcopterem zbudowany w oparciu
+          o Raspberry Pi 5 i oprogramowanie napisane w Pythonie.
+          Raspberry Pi odbiera dane z aparatury przez protokół CRSF,
+          steruje czterema silnikami poprzez sygnały PWM, odczytuje dane
+          z czujników przez magistralę I²C oraz generuje podstawową telemetrię.
         </p>
 
         <div class="tags">
-          <span class="tag">Raspberry Pi</span>
+          <span class="tag">Raspberry Pi 5</span>
           <span class="tag">Python</span>
-          <span class="tag">ELRS / CRSF</span>
+          <span class="tag">ExpressLRS</span>
+          <span class="tag">CRSF</span>
           <span class="tag">UART</span>
+          <span class="tag">PWM</span>
           <span class="tag">I²C</span>
           <span class="tag">BMP280</span>
           <span class="tag">MPU9250</span>
+          <span class="tag">BLHeli</span>
         </div>
 
         <div class="btns" style="margin-top:14px">
-          <a class="btn primary" href="index.html#kontakt">Kontakt</a>
-          <a class="btn" href="https://github.com/MXVM1" target="_blank" rel="noopener">GitHub</a>
+          <a
+            class="btn primary"
+            href="https://github.com/MXVM1/raspberry-pi-drone-flight-controller"
+            target="_blank"
+            rel="noopener"
+          >
+            GitHub
+          </a>
+
+          <a class="btn" href="index.html#kontakt">
+            Kontakt
+          </a>
         </div>
+
+        <img
+          src="images/drone-top.jpg"
+          alt="Dron z Raspberry Pi 5"
+          class="project-image"
+        >
+
       </div>
     </div>
   </main>
 
+
   <section>
     <div class="container">
+
       <div class="project-grid">
+
+
         <div class="card item">
+
           <h3>Najważniejsze funkcje</h3>
+
           <ul class="list">
-            <li>Odbiór kanałów RC z odbiornika ELRS (protokół <span class="mono">CRSF</span>) przez UART</li>
-            <li>Dekodowanie ramek RC (16 kanałów, 11-bit) i mapowanie na sterowanie</li>
-            <li>Sterowanie silnikami przez (ESC) z poziomu Raspberry Pi</li>
-            <li>Odczyt czujników przez I²C (ciśnienie/wysokość, IMU)</li>
-            <li>Struktura kodu pod dalszą rozbudowę (telemetria, stabilizacja)</li>
+            <li>
+              Odbiór danych RC z odbiornika ExpressLRS przez
+              <span class="mono">CRSF / UART</span>
+            </li>
+
+            <li>
+              Dekodowanie 16 kanałów RC zapisanych jako wartości 11-bitowe
+            </li>
+
+            <li>
+              Walidacja ramek przy użyciu
+              <span class="mono">CRC DVB-S2</span>
+            </li>
+
+            <li>
+              Własny mikser silników dla throttle, roll, pitch i yaw
+            </li>
+
+            <li>
+              Sterowanie czterema silnikami poprzez sygnały PWM
+            </li>
+
+            <li>
+              Awaryjne zatrzymanie silników za pomocą osobnego kanału RC
+            </li>
+
+            <li>
+              Odczyt akcelerometru i żyroskopu z MPU9250
+            </li>
+
+            <li>
+              Pomiar temperatury, ciśnienia i wysokości z BMP280
+            </li>
+
+            <li>
+              Generowanie telemetrii CRSF dla temperatury i wysokości
+            </li>
           </ul>
+
         </div>
 
-        <div class="card item">
-          <h3>Architektura (skrót)</h3>
+
+        <div class="card item image-card">
+
+          <h3>Gotowa konstrukcja</h3>
+
           <p class="desc">
-            <b>UART</b> → odbiornik ELRS → dekoder CRSF → wartości kanałów RC → logika sterowania → wyjście na ESC<br/>
-            <b>I²C</b> → BMP280 / MPU9250 → filtracja / prezentacja danych → (opcjonalnie telemetria)
+            Raspberry Pi 5 pełni rolę centralnej jednostki sterującej.
+            Do platformy podłączony jest odbiornik ELRS, czujniki oraz
+            czterokanałowy regulator ESC sterujący silnikami BLDC.
           </p>
-          <p class="meta">W tej sekcji możesz później dodać schemat blokowy lub zdjęcie.</p>
+
+          <img
+            src="images/drone-field-test.jpg"
+            alt="Dron Raspberry Pi podczas testów terenowych"
+          >
+
         </div>
 
+
+        <div class="card item wide-card image-card">
+
+          <h3>Architektura systemu</h3>
+
+          <p class="desc architecture-text">
+            <b>CRSF / UART</b> — odbiornik ELRS przekazuje dane kanałów RC
+            do Raspberry Pi.<br>
+
+            <b>I²C</b> — Raspberry Pi komunikuje się z MPU9250 i BMP280.<br>
+
+            <b>PWM</b> — Raspberry Pi generuje sygnały sterujące dla
+            czterokanałowego ESC.<br>
+
+            <b>CRSF Telemetry</b> — system może przesyłać informacje
+            o temperaturze i wysokości.
+          </p>
+
+          <img
+            src="images/system-architecture.png"
+            alt="Schemat architektury systemu sterowania dronem"
+          >
+
+        </div>
+
+
         <div class="card item">
-          <h3>Wyzwania i rozwiązania</h3>
+
+          <h3>Komunikacja CRSF</h3>
+
+          <p class="desc">
+            Odbiornik ExpressLRS komunikuje się z Raspberry Pi
+            przez port szeregowy:
+          </p>
+
+          <p class="mono">
+            /dev/serial0 → /dev/ttyAMA0<br>
+            Baud rate: 420000
+          </p>
+
+          <p class="desc">
+            Program wyszukuje ramki CRSF, sprawdza ich poprawność,
+            oblicza CRC i dekoduje wartości kanałów używanych później
+            do sterowania dronem.
+          </p>
+
+        </div>
+
+
+        <div class="card item">
+
+          <h3>Sterowanie silnikami</h3>
+
+          <p class="desc">
+            Cztery kanały PWM Raspberry Pi zostały przypisane
+            do poszczególnych wejść regulatora ESC.
+          </p>
+
           <ul class="list">
-            <li>Stabilność odczytu ramek UART → buforowanie + walidacja CRC</li>
-            <li>Kalibracja ESC → procedura min/max throttle + testy na pojedynczym silniku</li>
-            <li>Niepoprawne odczyty sensorów → weryfikacja kalibracji/kompensacji i adresów I²C</li>
+            <li>Motor 1 — GPIO 12</li>
+            <li>Motor 2 — GPIO 13</li>
+            <li>Motor 3 — GPIO 18</li>
+            <li>Motor 4 — GPIO 19</li>
           </ul>
+
+          <p class="desc">
+            Zakres sygnału używany w projekcie:
+          </p>
+
+          <p class="mono">
+            PWM MIN: 1000 µs<br>
+            PWM MAX: 2020 µs
+          </p>
+
         </div>
 
+
+        <div class="card item image-card">
+
+          <h3>Odczyt sensorów i telemetria</h3>
+
+          <p class="desc">
+            Podczas pracy programu w terminalu prezentowane są między innymi:
+            wartości kanałów RC, throttle, dane z akcelerometru i żyroskopu,
+            temperatura, ciśnienie oraz obliczona wysokość.
+          </p>
+
+          <img
+            src="images/terminal-sensors.png"
+            alt="Terminal z wartościami kanałów RC i sensorów"
+          >
+
+        </div>
+
+
+        <div class="card item image-card">
+
+          <h3>Magistrala I²C</h3>
+
+          <p class="desc">
+            Czujniki zostały podłączone do magistrali I²C.
+            Podczas diagnostyki wykrywane były między innymi urządzenia:
+          </p>
+
+          <p class="mono">
+            MPU9250 — 0x68<br>
+            BMP280 — 0x77
+          </p>
+
+          <img
+            src="images/i2c-detect.png"
+            alt="Wykrywanie urządzeń I2C na Raspberry Pi"
+          >
+
+        </div>
+
+
+        <div class="card item image-card">
+
+          <h3>Konfiguracja ESC</h3>
+
+          <p class="desc">
+            Parametry regulatora ESC zostały skonfigurowane
+            przy użyciu BLHeliSuite.
+            Arduino zostało wykorzystane jako interfejs umożliwiający
+            bezpośrednie połączenie z ESC.
+          </p>
+
+          <img
+            src="images/blheli-interface.jpg"
+            alt="Arduino jako interfejs BLHeli"
+          >
+
+        </div>
+
+
+        <div class="card item image-card">
+
+          <h3>Zakres pracy ESC</h3>
+
+          <p class="desc">
+            Zakres wejściowy regulatora został skonfigurowany
+            tak, aby odpowiadał wartościom generowanym później
+            przez program działający na Raspberry Pi.
+          </p>
+
+          <img
+            src="images/blheli-esc-config.jpg"
+            alt="Konfiguracja regulatora ESC w BLHeliSuite"
+          >
+
+        </div>
+
+
         <div class="card item">
+
+          <h3>Środowisko testowe</h3>
+
+          <ul class="list">
+            <li>Raspberry Pi 5 Model B Rev 1.0</li>
+            <li>Debian GNU/Linux 12 Bookworm</li>
+            <li>Kernel 6.12.34+rpt-rpi-2712</li>
+            <li>Python 3.11.2</li>
+            <li>smbus2 0.4.2</li>
+            <li>pyserial 3.5</li>
+            <li>bmp280 1.0.0</li>
+            <li>gpiozero 2.0.1</li>
+          </ul>
+
+          <p class="meta">
+            Projekt był testowany w powyższym środowisku.
+            Ze względu na bezpośrednie wykorzystanie GPIO, UART i I²C,
+            inne wersje systemu lub kernela mogą wymagać dodatkowej konfiguracji.
+          </p>
+
+        </div>
+
+
+        <div class="card item">
+
+          <h3>Ograniczenia</h3>
+
+          <p class="desc">
+            Jest to eksperymentalny system sterowania oparty o Raspberry Pi.
+            Program odczytuje dane z IMU, jednak obecna wersja nie implementuje
+            pełnego zamkniętego układu stabilizacji PID.
+          </p>
+
+          <p class="desc">
+            Projekt skupia się przede wszystkim na komunikacji ze sprzętem,
+            dekodowaniu CRSF, obsłudze sensorów, mikserze silników,
+            generowaniu PWM i telemetrii.
+          </p>
+
+        </div>
+
+
+        <div class="card item wide-card">
+
           <h3>Repozytorium</h3>
+
           <p class="desc">
-            <a href="https://github.com/MXVM1/raspberry-pi-drone-flight-controller" class="mono" target="_blank">
-  https://github.com/MXVM1/raspberry-pi-drone-flight-controller
-        </a>
+            Kod źródłowy, README, konfiguracja środowiska
+            oraz dodatkowe materiały znajdują się w repozytorium:
           </p>
+
+          <p>
+            <a
+              href="https://github.com/MXVM1/raspberry-pi-drone-flight-controller"
+              class="mono"
+              target="_blank"
+              rel="noopener"
+            >
+              github.com/MXVM1/raspberry-pi-drone-flight-controller
+            </a>
+          </p>
+
         </div>
+
+
       </div>
     </div>
   </section>
+
 
   <footer>
     <div class="container">
@@ -116,8 +473,10 @@
     </div>
   </footer>
 
+
   <script>
     document.getElementById("y").textContent = new Date().getFullYear();
   </script>
+
 </body>
 </html>
