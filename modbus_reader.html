@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Projekt: Modbus Reader — MXVM1</title>
+  <link rel="stylesheet" href="styles.css">
+
+  <style>
+    .project-hero { padding: 30px 0 10px; }
+
+    .breadcrumbs {
+      color: var(--muted);
+      font-size: 14px;
+      margin: 0 0 10px;
+    }
+
+    .project-title {
+      margin: 8px 0 10px;
+      font-size: clamp(26px, 3.4vw, 40px);
+      line-height: 1.1;
+    }
+
+    .project-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+
+    .project-grid .item {
+      padding: 18px;
+    }
+
+    .project-image {
+      width: 100%;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      display: block;
+      margin-top: 12px;
+    }
+
+    .mono {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+      "Liberation Mono", "Courier New", monospace;
+    }
+
+    .list {
+      margin: 8px 0 0;
+      padding-left: 18px;
+      color: var(--text);
+      opacity: .92;
+    }
+
+    .list li {
+      margin: 6px 0;
+    }
+
+    @media (max-width: 860px) {
+      .project-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+  <div class="nav">
+    <div class="container">
+      <div class="nav-inner">
+
+        <div class="brand">
+          <span class="dot"></span>
+          <span>MXVM1 • Portfolio</span>
+        </div>
+
+        <div class="nav-links">
+          <a href="index.html#start">Start</a>
+          <a href="index.html#projekty">Projekty</a>
+          <a href="index.html#o-mnie">O mnie</a>
+          <a href="index.html#kontakt">Kontakt</a>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+  <!-- HERO -->
+  <main class="project-hero">
+    <div class="container">
+
+      <p class="breadcrumbs">
+        ← <a href="index.html#projekty">Wróć do projektów</a>
+      </p>
+
+      <div class="card item">
+
+        <h1 class="project-title">
+          Modbus Reader
+        </h1>
+
+        <p class="desc">
+          Desktopowa aplikacja napisana w Pythonie służąca do komunikacji
+          z urządzeniami wykorzystującymi protokół Modbus TCP.
+          Program umożliwia konfigurację połączenia, odczyt różnych typów
+          rejestrów, interpretację danych oraz prezentację wyników
+          w graficznym interfejsie użytkownika.
+        </p>
+
+        <div class="tags">
+          <span class="tag">Python</span>
+          <span class="tag">PyQt6</span>
+          <span class="tag">pymodbus</span>
+          <span class="tag">Modbus TCP</span>
+          <span class="tag">TCP/IP</span>
+          <span class="tag">JSON</span>
+        </div>
+
+        <div class="btns" style="margin-top:14px">
+
+          <a
+            class="btn primary"
+            href="https://github.com/MXVM1/modbus-reader"
+            target="_blank"
+            rel="noopener"
+          >
+            Zobacz kod na GitHub
+          </a>
+
+          <a class="btn" href="index.html#projekty">
+            Wróć do portfolio
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+  </main>
+
+
+  <!-- CONTENT -->
+  <section>
+    <div class="container">
+
+      <div class="project-grid">
+
+
+        <!-- CEL -->
+        <div class="card item">
+
+          <h3>Cel projektu</h3>
+
+          <p class="desc">
+            Celem projektu było stworzenie prostego narzędzia desktopowego
+            pozwalającego na szybki odczyt danych z urządzeń komunikujących się
+            przez Modbus TCP bez konieczności korzystania z konsoli
+            lub zewnętrznych narzędzi diagnostycznych.
+          </p>
+
+          <p class="desc">
+            Aplikacja została wyposażona w graficzny interfejs użytkownika,
+            umożliwiający konfigurację parametrów połączenia oraz wykonywanie
+            odczytów w czytelny sposób.
+          </p>
+
+        </div>
+
+
+        <!-- FUNKCJE -->
+        <div class="card item">
+
+          <h3>Najważniejsze funkcje</h3>
+
+          <ul class="list">
+
+            <li>Połączenie z urządzeniem przez Modbus TCP</li>
+
+            <li>
+              Konfiguracja adresu IP, portu i timeoutu
+            </li>
+
+            <li>Obsługa Slave ID</li>
+
+            <li>
+              Odczyt Holding Registers, Input Registers,
+              Coils oraz Discrete Inputs
+            </li>
+
+            <li>
+              Wybór adresu i długości odczytu
+            </li>
+
+            <li>
+              Obsługa formatów UInt16, Int16, UInt32,
+              Int32 i Float32
+            </li>
+
+            <li>Skalowanie odczytanych wartości</li>
+
+            <li>Prezentacja wyników w tabeli</li>
+
+            <li>Zapis i wczytywanie konfiguracji</li>
+
+            <li>Jasny i ciemny motyw interfejsu</li>
+
+            <li>
+              Interfejs w języku polskim,
+              angielskim i niemieckim
+            </li>
+
+          </ul>
+
+        </div>
+
+
+        <!-- ARCHITEKTURA -->
+        <div class="card item">
+
+          <h3>Architektura</h3>
+
+          <p class="desc">
+            Aplikacja została podzielona na część odpowiedzialną
+            za interfejs użytkownika, konfigurację połączenia
+            oraz komunikację Modbus.
+          </p>
+
+          <p class="desc mono">
+            GUI → ustawienia połączenia → pymodbus → Modbus TCP
+            → urządzenie → odczyt rejestrów → interpretacja danych
+            → tabela wyników
+          </p>
+
+          <p class="meta">
+            Konfiguracja aplikacji przechowywana jest również
+            w pliku JSON.
+          </p>
+
+        </div>
+
+
+        <!-- TECHNOLOGIE -->
+        <div class="card item">
+
+          <h3>Technologie</h3>
+
+          <ul class="list">
+            <li><b>Python</b> — logika aplikacji</li>
+            <li><b>PyQt6</b> — interfejs graficzny</li>
+            <li><b>pymodbus</b> — komunikacja Modbus TCP</li>
+            <li><b>TCP/IP</b> — komunikacja sieciowa</li>
+            <li><b>JSON</b> — zapis konfiguracji</li>
+          </ul>
+
+        </div>
+
+
+        <!-- WNIOSKI -->
+        <div class="card item">
+
+          <h3>Czego nauczył mnie projekt</h3>
+
+          <ul class="list">
+
+            <li>
+              Praktycznej obsługi protokołu Modbus TCP
+            </li>
+
+            <li>
+              Komunikacji aplikacji z urządzeniami automatyki
+              przez sieć Ethernet
+            </li>
+
+            <li>
+              Obsługi różnych typów danych przechowywanych
+              w rejestrach Modbus
+            </li>
+
+            <li>
+              Tworzenia interfejsu graficznego w PyQt6
+            </li>
+
+            <li>
+              Organizacji większej aplikacji Pythonowej
+              na kilka modułów
+            </li>
+
+            <li>
+              Diagnostyki problemów z komunikacją sieciową
+              i konfiguracją urządzeń
+            </li>
+
+          </ul>
+
+        </div>
+
+
+        <!-- REPO -->
+        <div class="card item">
+
+          <h3>Repozytorium</h3>
+
+          <p class="desc">
+            Kod źródłowy projektu, instrukcja uruchomienia
+            oraz screenshot aplikacji znajdują się
+            w publicznym repozytorium GitHub.
+          </p>
+
+          <div class="btns">
+
+            <a
+              class="btn primary"
+              href="https://github.com/MXVM1/modbus-reader"
+              target="_blank"
+              rel="noopener"
+            >
+              github.com/MXVM1/modbus-reader
+            </a>
+
+          </div>
+
+        </div>
+
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      © <span id="y"></span>
+      MXVM1 • Projekt: Modbus Reader
+    </div>
+  </footer>
+
+
+  <script>
+    document.getElementById("y").textContent =
+      new Date().getFullYear();
+  </script>
+
+</body>
+</html>
